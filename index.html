@@ -85,7 +85,31 @@ D---E</pre></section><section><h2><span class="pulsating-red">C</span> is the sa
      /
 D---E master</pre></section><section data-background="#000000"><pre class="white">$ git merge topic --no-ff</pre></section><section data-background="#000000" data-transition="none"><pre class="white">      A---B---C topic
      /         \
-D---E-----------F master</pre></section></section><section><section data-background="#000000"><h2 class="white">git-branch</h2></section><section><h2>Branches are <span class="pulsating-red">pointers</span>.</h2></section><section><h2>Thats why they're fast.</h2></section><section><h2>Thats why fast-forwarding is possible.</h2></section></section><section><h1>Don't be afraid of</h1><a href="http://git-scm.com/"><img src="img/logo@2x.png" class="inline"></a></section></div></div><script src="vendor/reveal.js/lib/js/head.min.js"></script><script src="vendor/reveal.js/js/reveal.js"></script><script>Reveal.initialize({
+D---E-----------F master</pre></section></section><section><section data-background="#000000"><h2 class="white">git-branch</h2></section><section><h2>Branches are <span class="pulsating-red">pointers</span>.</h2></section><section><h2>Thats why they're fast.</h2></section><section><h2>Thats why fast-forwarding is possible.</h2></section><section><h2>Thats why you can checkout commits.</h2></section><section data-background="#000000"><h2 class="white">Each commit has one or many <span class="pulsating-red">parents</span>.</h2></section></section><section><section data-background="#000000"><h2 class="white">git-pull</h2></section><section><h2>Like managing your local branches was easy...</h2></section><section data-background="#000000" data-transition="none"><pre class="white">      A---B---C topic
+     /
+D---E master (me)</pre></section><section data-background="#000000" data-transition="none"><pre class="white"> 
+ 
+D---E---F---H master (you)</pre></section><section data-background="#000000"><pre class="white">$ git pull you master</pre></section><section data-background="#000000" data-transition="none"><pre class="white">      A---B---C topic
+     /
+D---E---F---H master (me)</pre></section><section><h2>Consider this.</h2></section><section data-background="#000000" data-transition="none"><pre class="white">      A---B---C topic
+     /         \
+D---E-----------P master (me)
+ 
+ </pre></section><section data-background="#000000" data-transition="none"><pre class="white"> 
+ 
+D---E---F---H master (you)
+ 
+ </pre></section><section data-background="#000000"><pre class="white">$ git pull you master</pre></section><section data-background="#000000" data-transition="none"><pre class="white">      A---B---C topic
+     /         \
+D---E-----------P---M master (me)
+      \            /
+       F---H-------</pre></section><section><h2>Oh, git-pull <span class="pulsating-red">merges</span> branches.</h2></section><section data-background="#000000" data-transition="none"><pre class="white">      A---B---C topic
+     /         \
+D---E-----------P master (me)</pre></section><section data-background="#000000" data-transition="none"><pre class="white"> 
+ 
+D---E---F---H master (you)</pre></section><section data-background="#000000"><pre class="white">$ git pull you master --rebase</pre></section><section data-background="#000000" data-transition="none"><pre class="white">      A---B---C topic
+     /         \
+D---E-----------P---F'--H' master (me)</pre></section><section><h2>That's why you don't create PR's from master to master.</h2></section><section><h2>It <span class="pulsating-red">fucks up</span> the history!</h2></section></section><section><h1>Don't be afraid of</h1><a href="http://git-scm.com/"><img src="img/logo@2x.png" class="inline"></a></section></div></div><script src="vendor/reveal.js/lib/js/head.min.js"></script><script src="vendor/reveal.js/js/reveal.js"></script><script>Reveal.initialize({
   controls: false,
   progress: false,
   history: true,

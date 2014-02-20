@@ -259,6 +259,103 @@ html(lang="en")
           section
             h2 Thats why fast-forwarding is possible.
 
+          section
+            h2 Thats why you can checkout commits.
+
+          section(data-background="#000000")
+            h2.white Each commit has one or many <span class="pulsating-red">parents</span>.
+
+        section
+          section(data-background="#000000")
+            h2.white git-pull
+
+          section
+            h2 Like managing your local branches was easy...
+
+          section(data-background="#000000" data-transition="none")
+            pre.white
+              |       A---B---C topic
+              |      /
+              | D---E master (me)
+
+          section(data-background="#000000" data-transition="none")
+            pre.white
+              | 
+              | 
+              | D---E---F---H master (you)
+
+          section(data-background="#000000")
+            pre.white
+              | $ git pull you master
+
+          section(data-background="#000000" data-transition="none")
+            pre.white
+              |       A---B---C topic
+              |      /
+              | D---E---F---H master (me)
+
+          section
+            h2 Consider this.
+
+          section(data-background="#000000" data-transition="none")
+            pre.white
+              |       A---B---C topic
+              |      /         \
+              | D---E-----------P master (me)
+              | 
+              | 
+
+          section(data-background="#000000" data-transition="none")
+            pre.white
+              | 
+              | 
+              | D---E---F---H master (you)
+              | 
+              | 
+
+          section(data-background="#000000")
+            pre.white
+              | $ git pull you master
+
+          section(data-background="#000000" data-transition="none")
+            pre.white
+              |       A---B---C topic
+              |      /         \
+              | D---E-----------P---M master (me)
+              |       \            /
+              |        F---H-------
+
+          section
+            h2 Oh, git-pull <span class="pulsating-red">merges</span> branches.
+
+          section(data-background="#000000" data-transition="none")
+            pre.white
+              |       A---B---C topic
+              |      /         \
+              | D---E-----------P master (me)
+
+          section(data-background="#000000" data-transition="none")
+            pre.white
+              | 
+              | 
+              | D---E---F---H master (you)
+
+          section(data-background="#000000")
+            pre.white
+              | $ git pull you master --rebase
+
+          section(data-background="#000000" data-transition="none")
+            pre.white
+              |       A---B---C topic
+              |      /         \
+              | D---E-----------P---F'--H' master (me)
+
+          section
+            h2 That's why you don't create PR's from master to master.
+
+          section
+            h2 It <span class="pulsating-red">fucks up</span> the history!
+
         section
           h1 Don't be afraid of
           a(href="http://git-scm.com/")
