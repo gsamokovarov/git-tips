@@ -46,19 +46,19 @@ html(lang="en")
       }
 
       @-moz-keyframes pulsating-red {
-        0% { color: white; } 50% { color: red; } 100% { color: white; }
+        0% { color: inherit!; } 50% { color: red; } 100% { color: inherit!; }
       }
       @-webkit-keyframes pulsating-red {
-        0% { color: white; } 50% { color: red; } 100% { color: white; }
+        0% { color: inherit!; } 50% { color: red; } 100% { color: inherit!; }
       }
       @-o-keyframes pulsating-red {
-        0% { color: white; } 50% { color: red; } 100% { color: white; }
+        0% { color: inherit!; } 50% { color: red; } 100% { color: inherit!; }
       }
       @-ms-keyframes pulsating-red {
-        0% { color: white; } 50% { color: red; } 100% { color: white; }
+        0% { color: inherit!; } 50% { color: red; } 100% { color: inherit!; }
       }
       @keyframes pulsating-red {
-        0% { color: white; } 50% { color: red; } 100% { color: white; }
+        0% { color: inherit!; } 50% { color: red; } 100% { color: inherit!; }
       }
   body
     div.reveal
@@ -88,28 +88,41 @@ html(lang="en")
             h2 What does rebase do?
 
           section(data-background="#000000" data-transition="none")
-            pre.white.
-              '      A---B---C topic
-              '      /
-              ' D---E master
+            pre.white
+              |      A---B---C topic
+              |      /
+              | D---E master
 
           section(data-background="#000000" data-transition="none")
-            pre.white.
-              '      A---B---C topic
-              '      /
-              ' D---E---F---G master
+            pre.white
+              |      A---B---C topic
+              |      /
+              | D---E---F---G master
+
+          section(data-background="#000000")
+            pre.white
+              | $ git rebase --onto master topic
 
           section(data-background="#000000" data-transition="none")
-            pre.white.
-              '               A'--B'--C' topic
-              '              /
-              ' D---E---F---G master
+            pre.white
+              |               A'--B'--C' topic
+              |              /
+              | D---E---F---G master
 
           section(data-background="#000000" data-transition="none")
-            pre.white.
-              ' D---E---F---G--A'--B'--C' topic
-              '
-              '
+            pre.white
+              | D---E---F---G--A'--B'--C' topic
+              | 
+              | 
+
+          section
+            h2 When to rebase?
+
+          section
+            h2 Rebase only <span class="pulsating-red">topic</span> branches!
+
+          section(data-background="#000000")
+            h2.white git-rebase--interactive
 
         section
           h1 Don't be afraid of
