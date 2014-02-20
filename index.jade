@@ -90,13 +90,13 @@ html(lang="en")
 
           section(data-background="#000000" data-transition="none")
             pre.white
-              |      A---B---C topic
+              |       A---B---C topic
               |      /
               | D---E master
 
           section(data-background="#000000" data-transition="none")
             pre.white
-              |      A---B---C topic
+              |       A---B---C topic
               |      /
               | D---E---F---G master
 
@@ -173,6 +173,91 @@ html(lang="en")
         section
           section(data-background="#000000")
             h2.white git-merge
+
+          section
+            h2 What does merge do?
+
+          section(data-background="#000000" data-transition="none")
+            pre.white
+              |       A---B---C topic
+              |      /
+              | D---E master
+
+          section(data-background="#000000" data-transition="none")
+            pre.white
+              |       A---B---C topic
+              |      /
+              | D---E---F---G master
+
+          section(data-background="#000000")
+            pre.white
+              | $ git merge topic
+
+          section(data-background="#000000" data-transition="none")
+            pre.white
+              |       A---B---C topic
+              |      /         \
+              | D---E---F---G---H master
+
+          section
+            h2 See the difference to rebase?
+
+          section
+            h2 <span class="pulsating-red">A</span>, <span class="pulsating-red">B</span> and <span class="pulsating-red">C</span> are the same!
+
+          section
+            h2 <span class="pulsating-red">H</span> has both <span class="pulsating-red">G</span> and <span class="pulsating-red">C</span> as parents.
+
+          section
+            h2 This behaviour is not guaranteed.
+
+          section(data-background="#000000" data-transition="none")
+            pre.white
+              |       A---B---C topic
+              |      /
+              | D---E master
+
+          section(data-background="#000000")
+            pre.white
+              | $ git merge topic
+
+          section(data-background="#000000" data-transition="none")
+            pre.white
+              |       A---B---C topic
+              |      /          master
+              | D---E
+
+          section
+            h2 <span class="pulsating-red">C</span> is the same for both branches!
+
+          section(data-background="#000000" data-transition="none")
+            pre.white
+              |       A---B---C topic
+              |      /
+              | D---E master
+
+          section(data-background="#000000")
+            pre.white
+              | $ git merge topic --no-ff
+
+          section(data-background="#000000" data-transition="none")
+            pre.white
+              |       A---B---C topic
+              |      /         \
+              | D---E-----------F master
+
+        section
+          section(data-background="#000000")
+            h2.white git-branch
+
+          section
+            h2 Branches are <span class="pulsating-red">pointers</span>.
+
+          section
+            h2 Thats why they're fast.
+
+          section
+            h2 Thats why fast-forwarding is possible.
 
         section
           h1 Don't be afraid of
