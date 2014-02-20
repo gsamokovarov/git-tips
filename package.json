@@ -1,0 +1,17 @@
+{
+  "name": "git-tips",
+  "description": "Tips and tricks on using Git.",
+  "version": "0.0.1",
+  "author": "Genadi Samokovarov <samokovarov@fidor.de>",
+  "keywords": [
+    "vagrant",
+    "puppet"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.fidor.de/samokovarov/git-tips.git"
+  },
+  "devDependencies": {
+    "jade": "~0.35.0"
+  }
+}

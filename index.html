@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Git Tricks</title><meta name="description" content="Git Tricks"><meta name="author" content="Генади Самоковаров"><link rel="stylesheet" href="vendor/reveal.js/css/reveal.css"><link rel="stylesheet" href="vendor/reveal.js/css/theme/simple.css"><link rel="stylesheet" href="vendor/github.css"><style>.reveal,
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 { font-family: Palatino, Georgia, serif; }
+
+.reveal h1 { font-size: 2.2em; text-shadow: none; }
+.reveal h2 { font-size: 1.9em; }
+.reveal h3 { font-size: 1.8em; }
+.reveal h4 { font-size: 1.5em; }
+.reveal h5 { font-size: 1.2em; }
+
+.reveal .white { color: #FFFFFF; }
+.reveal .big { font-size: 1.9em; }
+
+.reveal pre.inline { box-shadow: none; }
+.reveal img.inline { background: transparent; border: 0; box-shadow: none; margin: 0; vertical-align: middle; }
+
+.reveal a.image { text-decoration: none; }
+.reveal a:hover img.inline { background: transparent; border: 0; box-shadow: none; }
+
+.reveal .hidden { visibility: hidden; }
+
+.reveal .pulsating-red {
+  -moz-animation: pulsating-red 2s infinite linear;
+  -o-animation: pulsating-red 2s infinite linear;
+  -webkit-animation: pulsating-red 2s infinite linear;
+  animation: pulsating-red 2s infinite linear;
+}
+
+@-moz-keyframes pulsating-red {
+  0% { color: white; } 50% { color: red; } 100% { color: white; }
+}
+@-webkit-keyframes pulsating-red {
+  0% { color: white; } 50% { color: red; } 100% { color: white; }
+}
+@-o-keyframes pulsating-red {
+  0% { color: white; } 50% { color: red; } 100% { color: white; }
+}
+@-ms-keyframes pulsating-red {
+  0% { color: white; } 50% { color: red; } 100% { color: white; }
+}
+@keyframes pulsating-red {
+  0% { color: white; } 50% { color: red; } 100% { color: white; }
+}</style></head><body><div class="reveal"><div class="slides"><section data-background="#000000"><h1 class="white">Git <span class="pulsating-red">Tips</span></h1></section><section><img src="img/noidea.jpg" class="inline"></section><section><section data-background="#000000"><h2 class="white">git-rebase</h2></section><section><blockquote>Eventually you’ll discover the Easter egg in Git: all meaningful
+operations can be expressed in terms of the rebase command. Once
+you figure that out it all makes sense.</blockquote><p><a href="http://typicalprogrammer.com/linus-torvalds-goes-off-on-linux-and-git/">Linus Torvalds
+</a></p></section><section><h2>What does rebase do?</h2></section><section data-background="#000000" data-transition="none"><pre class="white">'      A---B---C topic
+'      /
+' D---E---F---G master
+</pre></section><section data-background="#000000" data-transition="none"><pre class="white">'               A'--B'--C' topic
+'              /
+' D---E---F---G master
+</pre></section><section data-background="#000000" data-transition="none"><pre class="white">'
+'
+' D---E---F---G---A'---B'---C' master
+</pre></section></section><section><h1>Don't be afraid of</h1><a href="http://git-scm.com/"><img src="img/logo@2x.png" class="inline"></a></section></div></div><script src="vendor/reveal.js/lib/js/head.min.js"></script><script src="vendor/reveal.js/js/reveal.js"></script><script>Reveal.initialize({
+  controls: false,
+  progress: false,
+  history: true,
+  center: true,
+  rollingLinks: true,
+  transition: 'linear',
+  backgroundTransition: 'none',
+  dependencies: [
+    {
+      src: 'vendor/reveal.js/plugin/highlight/highlight.js',
+      async: true,
+      callback: function() {
+        hljs.initHighlightingOnLoad();
+      }
+    }
+  ]
+});</script></body></html>
