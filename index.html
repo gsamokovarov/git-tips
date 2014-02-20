@@ -49,11 +49,14 @@ operations can be expressed in terms of the rebase command. Once
 you figure that out it all makes sense.</blockquote><p><a href="http://typicalprogrammer.com/linus-torvalds-goes-off-on-linux-and-git/">Linus Torvalds
 </a></p></section><section><h2>What does rebase do?</h2></section><section data-background="#000000" data-transition="none"><pre class="white">'      A---B---C topic
 '      /
+' D---E master
+</pre></section><section data-background="#000000" data-transition="none"><pre class="white">'      A---B---C topic
+'      /
 ' D---E---F---G master
 </pre></section><section data-background="#000000" data-transition="none"><pre class="white">'               A'--B'--C' topic
 '              /
 ' D---E---F---G master
-</pre></section><section data-background="#000000" data-transition="none"><pre class="white">' D---E---F---G--A'--B'--C' master
+</pre></section><section data-background="#000000" data-transition="none"><pre class="white">' D---E---F---G--A'--B'--C' topic
 '
 '
 </pre></section></section><section><h1>Don't be afraid of</h1><a href="http://git-scm.com/"><img src="img/logo@2x.png" class="inline"></a></section></div></div><script src="vendor/reveal.js/lib/js/head.min.js"></script><script src="vendor/reveal.js/js/reveal.js"></script><script>Reveal.initialize({
