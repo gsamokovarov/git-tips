@@ -356,6 +356,32 @@ html(lang="en")
           section
             h2 It <span class="pulsating-red">fucks up</span> the history!
 
+          section(data-background="#000000" data-transition="none")
+            pre.white
+              |       A---B---C topic
+              |      /         \
+              | D---E-----------P master (me)
+
+          section(data-background="#000000" data-transition="none")
+            pre.white
+              |       A---B---C topic
+              |      /         \
+              | D---E-----------P---H master (you)
+
+          section(data-background="#000000")
+            pre.white
+              | $ git pull you master --no-ff
+
+          section(data-background="#000000" data-transition="none")
+            pre.white
+              |       A---B---C topic
+              |      /         \
+              | D---E-----------P---H---M master (me)
+
+          section(data-background="img/ohcrap1.jpg")
+          section(data-background="img/ohcrap2.jpg")
+          section(data-background="img/ohcrap3.png")
+
         section
           h1 Don't be afraid of
           a(href="http://git-scm.com/")
