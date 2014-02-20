@@ -382,6 +382,51 @@ html(lang="en")
           section(data-background="img/ohcrap2.jpg")
           section(data-background="img/ohcrap3.png")
 
+          section
+            h2.fragment Just give me a moment...
+
+        section
+          section(data-background="#000000")
+            h2.white git-reset
+
+          section
+            img(class="inline" src="img/gangnam.png")
+
+          section(data-background="#000000" data-transition="none")
+            pre.white
+              |       A---B---C topic
+              |      /         \
+              | D---E-----------P---H---M master (me)
+              | 
+              | 
+
+          section(data-background="#000000" data-transition="none")
+            pre.white
+              |       A---B---C topic
+              |      /         \
+              | D---E-----------P---S---H---M' master (you)
+              |       \            /
+              |        F---G-------
+
+          section
+            h2 I really don't wanna deal with this crap...
+
+          section(data-background="#000000")
+            pre.white
+              | $ git fetch you
+              | $ git reset --hard you/master
+
+          section(data-background="#000000" data-transition="none")
+            pre.white
+              |       A---B---C topic
+              |      /         \
+              | D---E-----------P---S---H---M' master (me)
+              |       \            /
+              |        F---G-------
+
+          section
+            h2 But, seriously, be careful!
+
         section
           a(href="http://git-scm.com/"): img(class="inline" src="img/logo@2x.png")
 
