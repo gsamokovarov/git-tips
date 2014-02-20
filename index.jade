@@ -121,6 +121,14 @@ html(lang="en")
           section
             h2 Rebase only <span class="pulsating-red">topic</span> branches!
 
+          section
+            blockquote.
+              Rebasing (or any other form of rewriting) a branch that others
+              have based work on is a bad idea: anyone downstream of it is
+              forced to manually fix their history.
+            p: a(href="http://git-scm.com/docs/git-rebase").
+              git-rebase --help
+
           section(data-background="#000000")
             h2.white git-rebase--interactive
 
