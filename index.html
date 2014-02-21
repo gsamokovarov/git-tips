@@ -23,29 +23,52 @@
 
 .reveal .hidden { visibility: hidden; }
 
-.reveal .pulsating-red {
-  -moz-animation: pulsating-red 2s infinite linear;
-  -o-animation: pulsating-red 2s infinite linear;
-  -webkit-animation: pulsating-red 2s infinite linear;
-  animation: pulsating-red 2s infinite linear;
+.reveal .red {
+  -moz-animation: red 2s infinite linear;
+  -o-animation: red 2s infinite linear;
+  -webkit-animation: red 2s infinite linear;
+  animation: red 2s infinite linear;
 }
 
-@-moz-keyframes pulsating-red {
+.reveal .green {
+  -moz-animation: green 2s infinite linear;
+  -o-animation: green 2s infinite linear;
+  -webkit-animation: green 2s infinite linear;
+  animation: green 2s infinite linear;
+}
+
+@-moz-keyframes green {
+  0% { color: inherit!; } 50% { color: green; } 100% { color: inherit!; }
+}
+@-webkit-keyframes green {
+  0% { color: inherit!; } 50% { color: green; } 100% { color: inherit!; }
+}
+@-o-keyframes green {
+  0% { color: inherit!; } 50% { color: green; } 100% { color: inherit!; }
+}
+@-ms-keyframes green {
+  0% { color: inherit!; } 50% { color: green; } 100% { color: inherit!; }
+}
+@keyframes green {
+  0% { color: inherit!; } 50% { color: green; } 100% { color: inherit!; }
+}
+
+@-moz-keyframes red {
   0% { color: inherit!; } 50% { color: red; } 100% { color: inherit!; }
 }
-@-webkit-keyframes pulsating-red {
+@-webkit-keyframes red {
   0% { color: inherit!; } 50% { color: red; } 100% { color: inherit!; }
 }
-@-o-keyframes pulsating-red {
+@-o-keyframes red {
   0% { color: inherit!; } 50% { color: red; } 100% { color: inherit!; }
 }
-@-ms-keyframes pulsating-red {
+@-ms-keyframes red {
   0% { color: inherit!; } 50% { color: red; } 100% { color: inherit!; }
 }
-@keyframes pulsating-red {
+@keyframes red {
   0% { color: inherit!; } 50% { color: red; } 100% { color: inherit!; }
 }
-</style></head><body><div class="reveal"><div class="slides"><section data-background="#000000"><h1 class="white">Git <span class="pulsating-red">Tips</span></h1></section><section><img src="img/noidea.jpg" class="inline"></section><section><img src="img/notrust.jpg" class="inline"></section><section><section data-background="#000000"><h2 class="white">git-rebase</h2></section><section><blockquote>Eventually you’ll discover the Easter egg in Git: all meaningful
+</style></head><body><div class="reveal"><div class="slides"><section data-background="#000000"><h1 class="white">Git <span class="red">Tips</span></h1></section><section><img src="img/noidea.jpg" class="inline"></section><section><img src="img/notrust.jpg" class="inline"></section><section><section data-background="#000000"><h2 class="white">git-rebase</h2></section><section><blockquote>Eventually you’ll discover the Easter egg in Git: all meaningful
 operations can be expressed in terms of the rebase command. Once
 you figure that out it all makes sense.</blockquote><p><a href="http://typicalprogrammer.com/linus-torvalds-goes-off-on-linux-and-git/">Linus Torvalds
 </a></p></section><section><h2>What does rebase do?</h2></section><section data-background="#000000" data-transition="none"><pre class="white">      A---B---C topic
@@ -68,7 +91,7 @@ D---E---F---G master</pre></section><section data-background="#000000" data-tran
      |            \
      |             o'--o'--o'  topic
       \
-       o---o---o---o---o  next</pre></section><section><h2>When to rebase?</h2></section><section><h2>Rebase only <span class="pulsating-red">topic</span> branches!</h2></section><section><blockquote>Rebasing (or any other form of rewriting) a branch that others
+       o---o---o---o---o  next</pre></section><section><h2>When to rebase?</h2></section><section><h2>Rebase only <span class="red">topic</span> branches!</h2></section><section><blockquote>Rebasing (or any other form of rewriting) a branch that others
 have based work on is a bad idea: anyone downstream of it is
 forced to manually fix their history.</blockquote><p><a href="http://git-scm.com/docs/git-rebase">git-rebase --help
 </a></p></section><section data-background="#000000"><h2 class="white">git-rebase--interactive</h2></section><section><h2>As an idea, squish your commits into one.</h2></section><section><h2>This will tidy up the history.</h2></section></section><section><section data-background="#000000"><h2 class="white">git-merge</h2></section><section><h2>What does merge do?</h2></section><section data-background="#000000" data-transition="none"><pre class="white">      A---B---C topic
@@ -77,15 +100,15 @@ D---E master</pre></section><section data-background="#000000" data-transition="
      /
 D---E---F---G master</pre></section><section data-background="#000000"><pre class="white">$ git merge topic</pre></section><section data-background="#000000" data-transition="none"><pre class="white">      A---B---C topic
      /         \
-D---E---F---G---H master</pre></section><section><h2>See the difference to rebase?</h2></section><section><h2><span class="pulsating-red">A</span>, <span class="pulsating-red">B</span> and <span class="pulsating-red">C</span> are the same!</h2></section><section><h2><span class="pulsating-red">H</span> has both <span class="pulsating-red">G</span> and <span class="pulsating-red">C</span> as parents.</h2></section><section><h2>This behaviour is not guaranteed.</h2></section><section data-background="#000000" data-transition="none"><pre class="white">      A---B---C topic
+D---E---F---G---H master</pre></section><section><h2>See the difference to rebase?</h2></section><section><h2><span class="red">A</span>, <span class="red">B</span> and <span class="red">C</span> are the same!</h2></section><section><h2><span class="red">H</span> has both <span class="red">G</span> and <span class="red">C</span> as parents.</h2></section><section><h2>This behaviour is not guaranteed.</h2></section><section data-background="#000000" data-transition="none"><pre class="white">      A---B---C topic
      /
 D---E master</pre></section><section data-background="#000000"><pre class="white">$ git merge topic</pre></section><section data-background="#000000" data-transition="none"><pre class="white">      A---B---C topic
      /          master
-D---E</pre></section><section><h2><span class="pulsating-red">C</span> is the same for both branches!</h2></section><section data-background="#000000" data-transition="none"><pre class="white">      A---B---C topic
+D---E</pre></section><section><h2><span class="red">C</span> is the same for both branches!</h2></section><section data-background="#000000" data-transition="none"><pre class="white">      A---B---C topic
      /
 D---E master</pre></section><section data-background="#000000"><pre class="white">$ git merge topic --no-ff</pre></section><section data-background="#000000" data-transition="none"><pre class="white">      A---B---C topic
      /         \
-D---E-----------F master</pre></section></section><section><section data-background="#000000"><h2 class="white">git-branch</h2></section><section><h2>Branches are <span class="pulsating-red">pointers</span>.</h2></section><section><h2>Thats why they're fast.</h2></section><section><h2>Thats why fast-forwarding is possible.</h2></section><section><h2>Thats why you can checkout commits.</h2></section><section data-background="#000000"><h2 class="white">Each commit has one or many <span class="pulsating-red">parents</span>.</h2></section></section><section><section data-background="#000000"><h2 class="white">git-pull</h2></section><section><h2>Like managing your local branches was easy...</h2></section><section data-background="#000000" data-transition="none"><pre class="white">      A---B---C topic
+D---E-----------F master</pre></section></section><section><section data-background="#000000"><h2 class="white">git-branch</h2></section><section><h2>Branches are <span class="red">pointers</span>.</h2></section><section><h2>Thats why they're fast.</h2></section><section><h2>Thats why fast-forwarding is possible.</h2></section><section data-background="#000000"><h2 class="white">Each commit has one or many <span class="red">parents</span>.</h2></section><section><h2>Thats why you can checkout commits.</h2></section></section><section><section data-background="#000000"><h2 class="white">git-pull</h2></section><section><h2>Like managing your local branches was easy...</h2></section><section data-background="#000000" data-transition="none"><pre class="white">      A---B---C topic
      /
 D---E master (me)</pre></section><section data-background="#000000" data-transition="none"><pre class="white"> 
  
@@ -103,13 +126,13 @@ D---E---F---H master (you)
      /         \
 D---E-----------P---M master (me)
       \            /
-       F---H-------</pre></section><section><h2>Oh, git-pull <span class="pulsating-red">merges</span> branches.</h2></section><section data-background="#000000" data-transition="none"><pre class="white">      A---B---C topic
+       F---H-------</pre></section><section><h2>Oh, git-pull <span class="red">merges</span> branches.</h2></section><section data-background="#000000" data-transition="none"><pre class="white">      A---B---C topic
      /         \
 D---E-----------P master (me)</pre></section><section data-background="#000000" data-transition="none"><pre class="white"> 
  
 D---E---F---H master (you)</pre></section><section data-background="#000000"><pre class="white">$ git pull you master --rebase</pre></section><section data-background="#000000" data-transition="none"><pre class="white">      A---B---C topic
      /         \
-D---E-----------P---F'--H' master (me)</pre></section><section><h2>That's why you don't create PR's from master to master.</h2></section><section><h2>It <span class="pulsating-red">fucks up</span> the history!</h2></section><section data-background="#000000" data-transition="none"><pre class="white">      A---B---C topic
+D---E-----------P---F'--H' master (me)</pre></section><section><h2>That's why you don't create PR's from master to master.</h2></section><section><h2>It <span class="red">fucks up</span> the history!</h2></section><section data-background="#000000" data-transition="none"><pre class="white">      A---B---C topic
      /         \
 D---E-----------P master (me)</pre></section><section data-background="#000000" data-transition="none"><pre class="white">      A---B---C topic
      /         \
@@ -128,7 +151,26 @@ $ git reset --hard you/master</pre></section><section data-background="#000000" 
      /         \
 D---E-----------P---S---H---M' master (me)
       \            /
-       F---G-------</pre></section><section><h2>But, seriously, be careful!</h2></section></section><section><a href="http://git-scm.com/"><img src="img/logo@2x.png" class="inline"></a></section></div></div><script src="vendor/reveal.js/lib/js/head.min.js"></script><script src="vendor/reveal.js/js/reveal.js"></script><script>Reveal.initialize({
+       F---G-------</pre></section><section><h2>But, seriously, be careful!</h2></section></section><section><section data-background="#000000"><h2 class="white"><span class="green">git-tips</span></h2></section><section data-background="#000000"><pre class="white">$ git commit -v</pre></section><section data-background="#000000"><pre class="white">$ git commit --amend</pre></section><section data-background="#000000"><pre class="white">$ cat ~/.gitconfig
+[help]
+autocorrect = 1</pre></section><section data-background="#000000"><pre class="white">$ cat ~/.gitconfig
+[alias]
+  branches = branch -a
+  tags = tag -l
+  remotes = remote
+  sprout = checkout -b
+  switch = checkout
+  unstash = stash pop
+  forget = checkout -f
+  remember = checkout -f
+  root = rev-parse --show-toplevel
+  back = checkout -
+  amend = commit --amend
+  track = follow
+  state = status -s
+  rewind = reset --hard HEAD~1</pre></section><section data-background="#000000"><pre class="white">$ hub --version
+git version 1.8.2.3
+hub version 1.11.1</pre></section></section><section><a href="http://git-scm.com/"><img src="img/logo@2x.png" class="inline"></a></section></div></div><script src="vendor/reveal.js/lib/js/head.min.js"></script><script src="vendor/reveal.js/js/reveal.js"></script><script>Reveal.initialize({
   controls: false,
   progress: false,
   history: true,

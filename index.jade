@@ -38,26 +38,49 @@ html(lang="en")
 
       .reveal .hidden { visibility: hidden; }
 
-      .reveal .pulsating-red {
-        -moz-animation: pulsating-red 2s infinite linear;
-        -o-animation: pulsating-red 2s infinite linear;
-        -webkit-animation: pulsating-red 2s infinite linear;
-        animation: pulsating-red 2s infinite linear;
+      .reveal .red {
+        -moz-animation: red 2s infinite linear;
+        -o-animation: red 2s infinite linear;
+        -webkit-animation: red 2s infinite linear;
+        animation: red 2s infinite linear;
       }
 
-      @-moz-keyframes pulsating-red {
+      .reveal .green {
+        -moz-animation: green 2s infinite linear;
+        -o-animation: green 2s infinite linear;
+        -webkit-animation: green 2s infinite linear;
+        animation: green 2s infinite linear;
+      }
+
+      @-moz-keyframes green {
+        0% { color: inherit!; } 50% { color: green; } 100% { color: inherit!; }
+      }
+      @-webkit-keyframes green {
+        0% { color: inherit!; } 50% { color: green; } 100% { color: inherit!; }
+      }
+      @-o-keyframes green {
+        0% { color: inherit!; } 50% { color: green; } 100% { color: inherit!; }
+      }
+      @-ms-keyframes green {
+        0% { color: inherit!; } 50% { color: green; } 100% { color: inherit!; }
+      }
+      @keyframes green {
+        0% { color: inherit!; } 50% { color: green; } 100% { color: inherit!; }
+      }
+
+      @-moz-keyframes red {
         0% { color: inherit!; } 50% { color: red; } 100% { color: inherit!; }
       }
-      @-webkit-keyframes pulsating-red {
+      @-webkit-keyframes red {
         0% { color: inherit!; } 50% { color: red; } 100% { color: inherit!; }
       }
-      @-o-keyframes pulsating-red {
+      @-o-keyframes red {
         0% { color: inherit!; } 50% { color: red; } 100% { color: inherit!; }
       }
-      @-ms-keyframes pulsating-red {
+      @-ms-keyframes red {
         0% { color: inherit!; } 50% { color: red; } 100% { color: inherit!; }
       }
-      @keyframes pulsating-red {
+      @keyframes red {
         0% { color: inherit!; } 50% { color: red; } 100% { color: inherit!; }
       }
 
@@ -65,7 +88,7 @@ html(lang="en")
     div.reveal
       div.slides
         section(data-background="#000000")
-          h1.white Git <span class="pulsating-red">Tips</span>
+          h1.white Git <span class="red">Tips</span>
 
         section
           img(class="inline" src="img/noidea.jpg")
@@ -151,7 +174,7 @@ html(lang="en")
             h2 When to rebase?
 
           section
-            h2 Rebase only <span class="pulsating-red">topic</span> branches!
+            h2 Rebase only <span class="red">topic</span> branches!
 
           section
             blockquote.
@@ -203,10 +226,10 @@ html(lang="en")
             h2 See the difference to rebase?
 
           section
-            h2 <span class="pulsating-red">A</span>, <span class="pulsating-red">B</span> and <span class="pulsating-red">C</span> are the same!
+            h2 <span class="red">A</span>, <span class="red">B</span> and <span class="red">C</span> are the same!
 
           section
-            h2 <span class="pulsating-red">H</span> has both <span class="pulsating-red">G</span> and <span class="pulsating-red">C</span> as parents.
+            h2 <span class="red">H</span> has both <span class="red">G</span> and <span class="red">C</span> as parents.
 
           section
             h2 This behaviour is not guaranteed.
@@ -228,7 +251,7 @@ html(lang="en")
               | D---E
 
           section
-            h2 <span class="pulsating-red">C</span> is the same for both branches!
+            h2 <span class="red">C</span> is the same for both branches!
 
           section(data-background="#000000" data-transition="none")
             pre.white
@@ -251,7 +274,7 @@ html(lang="en")
             h2.white git-branch
 
           section
-            h2 Branches are <span class="pulsating-red">pointers</span>.
+            h2 Branches are <span class="red">pointers</span>.
 
           section
             h2 Thats why they're fast.
@@ -259,11 +282,11 @@ html(lang="en")
           section
             h2 Thats why fast-forwarding is possible.
 
+          section(data-background="#000000")
+            h2.white Each commit has one or many <span class="red">parents</span>.
+
           section
             h2 Thats why you can checkout commits.
-
-          section(data-background="#000000")
-            h2.white Each commit has one or many <span class="pulsating-red">parents</span>.
 
         section
           section(data-background="#000000")
@@ -326,7 +349,7 @@ html(lang="en")
               |        F---H-------
 
           section
-            h2 Oh, git-pull <span class="pulsating-red">merges</span> branches.
+            h2 Oh, git-pull <span class="red">merges</span> branches.
 
           section(data-background="#000000" data-transition="none")
             pre.white
@@ -354,7 +377,7 @@ html(lang="en")
             h2 That's why you don't create PR's from master to master.
 
           section
-            h2 It <span class="pulsating-red">fucks up</span> the history!
+            h2 It <span class="red">fucks up</span> the history!
 
           section(data-background="#000000" data-transition="none")
             pre.white
@@ -426,6 +449,49 @@ html(lang="en")
 
           section
             h2 But, seriously, be careful!
+
+        section
+          section(data-background="#000000")
+            h2.white <span class="green">git-tips</span>
+
+          section(data-background="#000000")
+            pre.white
+              | $ git commit -v
+
+          section(data-background="#000000")
+            pre.white
+              | $ git commit --amend
+
+          section(data-background="#000000")
+            pre.white
+              | $ cat ~/.gitconfig
+              | [help]
+              | autocorrect = 1
+
+          section(data-background="#000000")
+            pre.white
+              | $ cat ~/.gitconfig
+              | [alias]
+              |   branches = branch -a
+              |   tags = tag -l
+              |   remotes = remote
+              |   sprout = checkout -b
+              |   switch = checkout
+              |   unstash = stash pop
+              |   forget = checkout -f
+              |   remember = checkout -f
+              |   root = rev-parse --show-toplevel
+              |   back = checkout -
+              |   amend = commit --amend
+              |   track = follow
+              |   state = status -s
+              |   rewind = reset --hard HEAD~1
+
+          section(data-background="#000000")
+            pre.white
+              | $ hub --version
+              | git version 1.8.2.3
+              | hub version 1.11.1
 
         section
           a(href="http://git-scm.com/"): img(class="inline" src="img/logo@2x.png")
