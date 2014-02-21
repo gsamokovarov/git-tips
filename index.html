@@ -168,7 +168,19 @@ autocorrect = 1</pre></section><section data-background="#000000"><pre class="wh
   amend = commit --amend
   track = follow
   state = status -s
-  rewind = reset --hard HEAD~1</pre></section><section data-background="#000000"><pre class="white">$ hub --version
+  rewind = reset --hard HEAD~1</pre></section><section data-background="#000000"><pre class="white">$ cat ~/bin/git-follow
+#!/usr/bin/env bash
+#
+# Follows the current git branch on a remote. If the remote is not
+# specified, it is assumed to be called origin.
+#
+# Usage:
+#   git follow [remote]
+ 
+REMOTE=${1:-origin}
+BRANCH=$(git symbolic-ref --short HEAD)
+ 
+git branch --set-upstream-to=$REMOTE/$BRANCH $BRANCH</pre></section><section data-background="#000000"><pre class="white">$ hub --version
 git version 1.8.2.3
 hub version 1.11.1</pre></section></section><section><a href="http://git-scm.com/"><img src="img/logo@2x.png" class="inline"></a></section></div></div><script src="vendor/reveal.js/lib/js/head.min.js"></script><script src="vendor/reveal.js/js/reveal.js"></script><script>Reveal.initialize({
   controls: false,
