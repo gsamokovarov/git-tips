@@ -52,22 +52,6 @@ html(lang="en")
         animation: green 2s infinite linear;
       }
 
-      @-moz-keyframes green {
-        0% { color: inherit!; } 50% { color: green; } 100% { color: inherit!; }
-      }
-      @-webkit-keyframes green {
-        0% { color: inherit!; } 50% { color: green; } 100% { color: inherit!; }
-      }
-      @-o-keyframes green {
-        0% { color: inherit!; } 50% { color: green; } 100% { color: inherit!; }
-      }
-      @-ms-keyframes green {
-        0% { color: inherit!; } 50% { color: green; } 100% { color: inherit!; }
-      }
-      @keyframes green {
-        0% { color: inherit!; } 50% { color: green; } 100% { color: inherit!; }
-      }
-
       @-moz-keyframes red {
         0% { color: inherit!; } 50% { color: red; } 100% { color: inherit!; }
       }
@@ -84,6 +68,22 @@ html(lang="en")
         0% { color: inherit!; } 50% { color: red; } 100% { color: inherit!; }
       }
 
+      @-moz-keyframes green {
+        0% { color: inherit!; } 50% { color: green; } 100% { color: inherit!; }
+      }
+      @-webkit-keyframes green {
+        0% { color: inherit!; } 50% { color: green; } 100% { color: inherit!; }
+      }
+      @-o-keyframes green {
+        0% { color: inherit!; } 50% { color: green; } 100% { color: inherit!; }
+      }
+      @-ms-keyframes green {
+        0% { color: inherit!; } 50% { color: green; } 100% { color: inherit!; }
+      }
+      @keyframes green {
+        0% { color: inherit!; } 50% { color: green; } 100% { color: inherit!; }
+      }
+
   body
     div.reveal
       div.slides
@@ -93,10 +93,10 @@ html(lang="en")
         section
           img(class="inline" src="img/noidea.jpg")
 
-        section
+        section(data-transition="none")
           img(class="inline" src="img/notrust.jpg")
 
-        section
+        section(data-transition="none")
           section(data-background="#000000")
             h2.white git-rebase
 
@@ -477,6 +477,12 @@ html(lang="en")
 
           section
             h2 But, seriously, be careful!
+
+        section
+          section(data-background="#000000")
+            h2.white git-cherry-pick
+
+          section(data-background="img/nonono.gif")
 
         section
           section(data-background="#000000")
