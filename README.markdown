@@ -1,4 +1,3 @@
-Git Tips
---------
+# Git Tips
 
-A presentation on Git tips and tricks.
+A presentation about Git tips and tricks I did for a client in 2014.
